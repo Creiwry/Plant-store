@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class='md:text-5xl text-center m-3'>Our Products</h1>
+{% if request.user.is_authenticated %}
+  <h2 class="md:text-4xl text-center">Hello {{user}}</h2>
+{% endif %}
+
+<div class='md:grid md:grid-cols-3 lg:grid-cols-4 m-3'>
+  {% for product in products %}
+  <div class='m-2 border rounded border-green-800 bg-emerald-100 p-5 hover:scale-105 hover:cursor-pointer'>
+    <h3 class="md:text-3xl text-slate-800">{{product.title|title}}</h3>
+    <p>Price: ${{product.price}}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
