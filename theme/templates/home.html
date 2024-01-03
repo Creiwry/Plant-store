@@ -6,12 +6,17 @@
   <h2 class="md:text-4xl text-center">Hello {{user}}</h2>
 {% endif %}
 
-<div class='md:grid md:grid-cols-3 lg:grid-cols-4 m-3'>
+<div class='md:grid md:grid-cols-3 lg:grid-cols-4 m-3 '>
   {% for product in products %}
-  <div class='m-2 border rounded border-green-800 bg-emerald-100 p-5 hover:scale-105 hover:cursor-pointer'>
-    <h3 class="md:text-3xl text-slate-800">{{product.title|title}}</h3>
-    <p>Price: ${{product.price}}</p>
-  </div>
+  <a href="product/{{product.id}}">
+    <div class='m-2 border rounded border-transparent bg-stone-300 p-5 object-fill hover:scale-105 hover:cursor-pointer'>
+      <h3 class="md:text-3xl text-slate">{{product.title|title}}</h3>
+      <p class="md:text-xl">Price: ${{product.price}}</p>
+    </div>
+  </a>
   {% endfor %}
+</div>
+<div class="text-center m-3">
+  <a href="product/create" class="p-3 hover:cursor-pointer hover:shadow-lg m-2 border text-xl rounded-xl bg-emerald-700 text-white">Create new product</a>
 </div>
 {% endblock %}

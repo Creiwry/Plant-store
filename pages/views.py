@@ -7,8 +7,6 @@ def home_view(request, *args, **kwargs):
     print(request.user)
     products = Product.objects.all()
     my_context = {
-            "my_text": "this is my text",
-            "my_number": 20,
             "products": products,
             }
     return render(request, "home.html", my_context)
