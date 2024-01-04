@@ -6,10 +6,10 @@
   <h2 class="md:text-4xl text-center">Hello {{user}}</h2>
 {% endif %}
 
-<div class='md:grid md:grid-cols-3 lg:grid-cols-4 m-3 '>
+<div class='md:grid gap-3 md:grid-cols-3 lg:grid-cols-4 m-3 '>
   {% for product in products %}
   <a href="product/{{product.id}}">
-    <div class='m-2 border rounded border-transparent bg-stone-300 p-5 object-fill hover:scale-105 hover:cursor-pointer'>
+    <div class='m-2 border rounded border-transparent bg-stone-300 p-5 h-full w-full hover:scale-105 hover:cursor-pointer'>
       <h3 class="md:text-3xl text-slate">{{product.title|title}}</h3>
       <p class="md:text-xl">Price: ${{product.price}}</p>
     </div>

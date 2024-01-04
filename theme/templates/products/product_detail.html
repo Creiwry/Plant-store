@@ -16,5 +16,7 @@
   </p>
   <p class='md:text-xl text-center m-3'>Price:</p>
   <p class='md:text-lg text-center m-3'>${{product.price}}</p>
+  <a class="p-3 hover:cursor-pointer hover:shadow-lg m-2 border text-xl rounded-xl bg-emerald-700 text-white" href="/product/{{product.id}}/update">Update Product</a>
+  {% include "./product_delete.html" with product_id=product.id %}
 </div>
 {% endblock %}

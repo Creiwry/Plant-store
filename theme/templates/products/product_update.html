@@ -1,0 +1,13 @@
+{% extends "../base.html" %}
+
+{% block content %}
+<form class="flex flex-col bg-white max-w-xl m-auto shadow-md rounded px-8 pt-6 pb-8 my-4 text-center" action='/product/{{product_id}}/update' method='POST'>
+  <h1 class="text-2xl font-semibold">Update Product</h1>
+  {% csrf_token %}
+  {{ form.title }}
+  {{ form.description }}
+  {{ form.price }}
+  <input type="submit" value="Save" class="w-min m-auto mt-2 border rounded bg-green-600 text-white p-3 hover:scale-110 hover:cursor-pointer" />
+</form>
+  
+{% endblock %}

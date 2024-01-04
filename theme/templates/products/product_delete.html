@@ -1,0 +1,8 @@
+{% block product_delete %}
+<form action="/product/{{product_id}}/delete" method="post">
+  {% csrf_token %}
+  
+  <input type="submit" name="product_delete" id="product_delete" value="Delete" class="p-3 hover:cursor-pointer hover:shadow-lg m-2 border text-xl rounded-xl bg-rose-700 text-white">
+</form>
+  
+{% endblock %}
